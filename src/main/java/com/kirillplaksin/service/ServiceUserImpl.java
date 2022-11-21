@@ -16,7 +16,6 @@ public class ServiceUserImpl implements ServiceUser {
     @Autowired
     public ServiceUserImpl(DaoUser daoUser) {
         this.daoUser = daoUser;
-        System.out.println("Service is create!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
     @Transactional
@@ -29,11 +28,12 @@ public class ServiceUserImpl implements ServiceUser {
         return daoUser.getUserById(id);
     }
 
-//    @Transactional  // открываю "в ручную" в DAO
+//    @Transactional  // открываю "вручную" в DAO
     public void saveUser(User user) {
         daoUser.saveUser(user);
     }
 
+//"вручную" в DAO
     public void removeUserById(int id) {
 
         daoUser.removeUserById(id);

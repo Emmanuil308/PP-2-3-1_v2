@@ -21,13 +21,8 @@ public class ControllerUser {
         this.serviceUser = serviceUser;
     }
 
+
     @GetMapping()
-    public String startPage() {
-        return "start-page";
-    }
-
-
-    @GetMapping("/showAll")
     public String showAllUser (Model model) {
 
         model.addAttribute("allUsers", serviceUser.getAllUser());
@@ -49,7 +44,7 @@ public class ControllerUser {
     public String saveUser(@ModelAttribute ("saveOrUpdateUser") User user) {
         serviceUser.saveUser(user);
 
-        return "redirect:/showAll";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "updateUser")
@@ -67,6 +62,6 @@ public class ControllerUser {
 
         serviceUser.removeUserById(id);
 
-        return  "redirect:/showAll";
+        return  "redirect:/";
     }
 }
