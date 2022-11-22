@@ -1,10 +1,6 @@
 package com.kirillplaksin.dao;
 
 import com.kirillplaksin.entity.User;
-import org.hibernate.Session;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Repository;
 
 
@@ -45,7 +41,5 @@ public class DaoUserImpl implements DaoUser {
     public void removeUserById(int id) {
 
         em.remove(em.find(User.class, id));
-
-
     }
 }

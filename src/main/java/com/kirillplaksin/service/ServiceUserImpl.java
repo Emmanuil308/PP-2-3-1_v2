@@ -28,7 +28,7 @@ public class ServiceUserImpl implements ServiceUser {
         return daoUser.getUserById(id);
     }
 
-    @Transactional  // открываю "вручную" в DAO
+    @Transactional
     public void saveUser(User user) {
         daoUser.saveUser(user);
     }
